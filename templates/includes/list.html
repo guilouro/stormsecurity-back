@@ -1,0 +1,9 @@
+<ul>
+    {% for movie in items %}
+        <li class="fl">
+            <a href="{{ movie.get_absolute_url }}">
+                <img src="/media/{{ movie.picture }}" alt="{{ movie.title }}">
+            </a>
+        </li>
+    {% endfor %}
+</ul>

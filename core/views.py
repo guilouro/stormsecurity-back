@@ -30,7 +30,8 @@ class MovieDetail(DetailView):
     def get_context_data(self, **kwargs):
         context_data = super(MovieDetail, self).get_context_data(**kwargs)
         related = Movie.objects.filter(
-            Q(genre=self.object.genre) |
+            Q(genre__name__in=list(
+                self.object.genre.values_list('name', flat=True))) |
             Q(actor__name__in=list(
                 self.object.actor.values_list('name', flat=True)))
         ).exclude(id=self.object.id)[:10]

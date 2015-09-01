@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+import django_countries.fields
 
 
 class Migration(migrations.Migration):
@@ -12,9 +13,9 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='movie',
-            name='picture',
-            field=models.ImageField(default='', upload_to=b'', verbose_name='Imagem'),
+            model_name='actor',
+            name='country',
+            field=django_countries.fields.CountryField(default='', max_length=2),
             preserve_default=False,
         ),
     ]

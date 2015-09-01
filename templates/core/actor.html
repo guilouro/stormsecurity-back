@@ -13,14 +13,14 @@
         <article class="fl">
             <p class="tit">Ator</p>
             <h2>{{ actor.name }}</h2>
-            <p class="txt"><strong>País:</strong> Brasil</p>
+            <p class="txt"><strong>País:</strong> {{ actor.country.name }}</p>
 
         </article>
 
     </section>
 
     <section id="listagem" class='fix'>
-        {% include "include/list.html" with items=related %}
+        {% include "includes/list.html" with items=related %}
     </section>
 
 {% endblock content %}

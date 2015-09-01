@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
+from django_countries.fields import CountryField
 
 
 class Movie(models.Model):
@@ -8,7 +9,7 @@ class Movie(models.Model):
     resume = models.TextField(_('Sinopse'))
     picture = models.ImageField(_('Imagem'))
     slug = models.SlugField(_('Slug'))
-    genre = models.ForeignKey('Genre', verbose_name=_(u'Gênero'))
+    genre = models.ManyToManyField('Genre', verbose_name=_(u'Gênero'))
     actor = models.ManyToManyField('Actor', verbose_name=_(u'Ator'))
 
     def __unicode__(self):
@@ -45,6 +46,7 @@ class Actor(models.Model):
     name = models.CharField(_('Nome'), max_length=80)
     picture = models.ImageField(_('Imagem'))
     slug = models.SlugField(_('Slug'))
+    country = CountryField()
 
     def __unicode__(self):
         return self.name
