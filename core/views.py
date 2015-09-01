@@ -34,6 +34,6 @@ class MovieDetail(DetailView):
                 self.object.genre.values_list('name', flat=True))) |
             Q(actor__name__in=list(
                 self.object.actor.values_list('name', flat=True)))
-        ).exclude(id=self.object.id)[:10]
+        ).distinct().exclude(id=self.object.id)[:10]
         context_data['related'] = related
         return context_data
