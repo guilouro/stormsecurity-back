@@ -14,6 +14,10 @@ class Movie(models.Model):
     def __unicode__(self):
         return self.title
 
+    class Meta:
+        verbose_name = _('Filme')
+        verbose_name_plural = _('Filmes')
+
 
 class Genre(models.Model):
     name = models.CharField(_('Nome'), max_length=80)
@@ -21,6 +25,10 @@ class Genre(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        verbose_name = _(u'Gênero')
+        verbose_name_plural = _(u'Generos')
 
 
 class Actor(models.Model):
@@ -31,3 +39,6 @@ class Actor(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name = _('Ator')
+        verbose_name_plural = _('Atores')
