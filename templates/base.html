@@ -18,5 +18,13 @@
         {% block content %}{% endblock content %}
     </main>
 
+    <script>
+        document.getElementById('order_control').addEventListener('change', function(){
+            if(this.value !== ""){
+                window.location.href = this.value;
+            }
+        });
+    </script>
+
 </body>
 </html>
