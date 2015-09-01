@@ -3,3 +3,4 @@ dj-database-url==0.3.0
 django==1.7
 django-htmlmin
 Pillow-2.9.0
+django-grappelli
