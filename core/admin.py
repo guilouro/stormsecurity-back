@@ -18,6 +18,12 @@ class GenreAdmin(admin.ModelAdmin):
 
 class ActorAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
+    list_display = ('name', 'image')
+
+    def image(self, obj):
+        return '<img src="/media/%s" width="50" alt="" />' % obj.picture
+
+    image.allow_tags = True
 
 
 admin.site.register(Movie, MovieAdmin)
