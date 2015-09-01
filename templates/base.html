@@ -1,27 +1,22 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-
-<html class="no-js" lang="pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Django Boilerplate</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Storm Security - Teste Python</title>
 
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <link rel="stylesheet" href="{% static "css/reset.css" %}">
+    <link rel="stylesheet" href="{% static "css/comum.css" %}">
 </head>
 <body>
+    <header id="header">
+        <div class="content">
+            <a href="{% url 'core:home' %}" class="home" title="voltar para home"></a>
+        </div>
+    </header>
+    <main id="Content" class="fix">
 
-    {% block content %}{% endblock content %}
+    </main>
 
 </body>
 </html>
