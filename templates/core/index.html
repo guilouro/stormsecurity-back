@@ -5,13 +5,7 @@
 
     <header class="fix">
         <h1 class="fl">Listagem de filmes</h1>
-        <form action="">
-            <select name="" id="" class="fr">
-                <option value="">Ordenar por:</option>
-                <option value="/?order_by=title">a - z</option>
-                <option value="/?order_by=-title">z - a</option>
-            </select>
-        </form>
+        {% include "includes/order.html" %}
     </header>
 
     <section id="listagem" class='fix'>

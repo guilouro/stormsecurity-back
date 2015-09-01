@@ -5,11 +5,11 @@
 
     <header class="fix">
         <h1 class="fl"> {{ genre.name }} </h1>
-        {% include "include/order.html" %}
+        {% include "includes/order.html" %}
     </header>
 
     <section id="listagem" class='fix'>
-        {% include "include/list.html" with items=related %}
+        {% include "includes/list.html" with items=related %}
     </section>
 
 {% endblock content %}
