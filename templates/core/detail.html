@@ -34,13 +34,9 @@
         <header class="fix">
             <h2>Filmes Relacionados</h2>
         </header>
-        <ul>
-            {% for movie in related %}
-                <li class="fl">
-                    <a href="{{ movie.get_absolute_url }}"><img src="/media/{{ movie.picture }}" alt="{{ movie.title }}"></a>
-                </li>
-            {% endfor %}
-        </ul>
+
+        {% include "include/list.html" with items=related %}
+
     </section>
 
 {% endblock content %}
