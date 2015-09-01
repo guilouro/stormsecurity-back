@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <header class="fix">
+        <h1>Atores</h1>
+    </header>
+
+    <section id="Infos" class='fix'>
+        <figure class="fl"><img src="/media/{{ actor.picture }}" alt=""></figure>
+
+        <article class="fl">
+            <p class="tit">Ator</p>
+            <h2>{{ actor.name }}</h2>
+            <p class="txt"><strong>País:</strong> Brasil</p>
+
+        </article>
+
+    </section>
+
+    <section id="listagem" class='fix'>
+        {% include "include/list.html" with items=related %}
+    </section>
+
+{% endblock content %}

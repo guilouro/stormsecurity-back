@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from core.models import Movie, Genre, Actor
 from django.views.generic import DetailView, ListView
 
@@ -9,22 +9,16 @@ class HomeList(ListView):
     template_name = 'core/index.html'
 
 
-class GenreList(HomeList):
-
-    def get(self, request, *args, **kwargs):
-        self.queryset = Movie.objects.filter(
-            genre=Genre.objects.get(**self.kwargs)
-        )
-        return super(GenreList, self).get(request, *args, **kwargs)
+def genre_list(request, slug):
+    genre = get_object_or_404(Genre, slug=slug)
+    related = Movie.objects.filter(genre=genre)[:10]
+    return render(request, 'core/genre.html', {'genre': genre, 'related': related})
 
 
-class ActorList(HomeList):
-
-    def get(self, request, *args, **kwargs):
-        self.queryset = Movie.objects.filter(
-            actor=Actor.objects.get(**self.kwargs)
-        )
-        return super(ActorList, self).get(request, *args, **kwargs)
+def actor_list(request, slug):
+    actor = get_object_or_404(Actor, slug=slug)
+    related = Movie.objects.filter(actor=actor)[:10]
+    return render(request, 'core/actor.html', {'actor': actor, 'related': related})
 
 
 class MovieDetail(DetailView):
@@ -35,7 +29,8 @@ class MovieDetail(DetailView):
         context_data = super(MovieDetail, self).get_context_data(**kwargs)
         related = Movie.objects.filter(
             Q(genre=self.object.genre) |
-            Q(actor__name__in=list(self.object.actor.values_list('name', flat=True)))
-        )[:10]
+            Q(actor__name__in=list(
+                self.object.actor.values_list('name', flat=True)))
+        ).exclude(id=self.object.id)[:10]
         context_data['related'] = related
         return context_data
