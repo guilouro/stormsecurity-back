@@ -17,13 +17,13 @@
             </p>
             <p class="tit">Genero:</p>
             <p class="txt">
-                <a href="{{ movie.genre.slug }}">{{ movie.genre.name }}</a>
+                <a href="{{ movie.genre.get_absolute_url }}">{{ movie.genre.name }}</a>
             </p>
 
             <p class="tit">Atores:</p>
             <p class="txt">
                 {% for actor in movie.actor.all %}
-                    <a href="{{ actor.slug }}"> {{ actor.name }} </a>
+                    <a href="{{ actor.get_absolute_url }}"> {{ actor.name }} </a>
                 {% endfor %}
             </p>
         </article>
