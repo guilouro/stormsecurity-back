@@ -15,6 +15,7 @@ class Movie(models.Model):
         return self.title
 
     class Meta:
+        ordering = ['title']
         verbose_name = _('Filme')
         verbose_name_plural = _('Filmes')
 
@@ -28,6 +29,7 @@ class Genre(models.Model):
 
     class Meta:
         verbose_name = _(u'Gênero')
+        ordering = ['name']
         verbose_name_plural = _(u'Generos')
 
 
@@ -40,5 +42,6 @@ class Actor(models.Model):
         return self.name
 
     class Meta:
+        ordering = ['name']
         verbose_name = _('Ator')
         verbose_name_plural = _('Atores')
