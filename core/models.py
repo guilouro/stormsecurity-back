@@ -6,6 +6,7 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField(_(u'Título'), max_length=100)
     resume = models.TextField(_('Sinopse'))
+    picture = models.ImageField(_('Imagem'))
     slug = models.SlugField(_('Slug'))
     genre = models.ForeignKey('Genre', verbose_name=_(u'Gênero'))
     actor = models.ManyToManyField('Actor', verbose_name=_(u'Ator'))
@@ -15,7 +16,7 @@ class Movie(models.Model):
 
 
 class Genre(models.Model):
-    name = models.CharField(_(u'Gênero'), max_length=80)
+    name = models.CharField(_('Nome'), max_length=80)
     slug = models.SlugField(_('Slug'))
 
     def __unicode__(self):
@@ -23,7 +24,7 @@ class Genre(models.Model):
 
 
 class Actor(models.Model):
-    name = models.CharField(_(u'Gênero'), max_length=80)
+    name = models.CharField(_('Nome'), max_length=80)
     picture = models.ImageField(_('Imagem'))
     slug = models.SlugField(_('Slug'))
 

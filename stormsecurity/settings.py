@@ -94,6 +94,9 @@ STATIC_ROOT = BASE_DIR.parent.child('static')
 STATIC_URL = '/static/'
 
 
+MEDIA_ROOT = BASE_DIR.parent.child('media')
+MEDIA_URL = '/media/'
+
 ####################################
 # load settings_local.py if exists
 ####################################
