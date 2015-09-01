@@ -11,8 +11,10 @@ class HomeList(ListView):
 
 def genre_item(request, slug):
     genre = get_object_or_404(Genre, slug=slug)
-    related = Movie.objects.filter(genre=genre)[:10]
-    return render(request, 'core/genre.html', {'genre': genre, 'related': related})
+    related = Movie.objects.filter(genre=genre)
+    if 'order_by' in request.GET:
+        related = related.order_by(request.GET['order_by'])
+    return render(request, 'core/genre.html', {'genre': genre, 'related': related[:10]})
 
 
 def actor_item(request, slug):
