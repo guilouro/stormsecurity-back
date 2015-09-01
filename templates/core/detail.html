@@ -17,13 +17,27 @@
             </p>
             <p class="tit">Genero:</p>
             <p class="txt">
-                <a href="{{ movie.genre.get_absolute_url }}">{{ movie.genre.name }}</a>
+                {% for genre in movie.genre.all %}
+                    {% if forloop.revcounter == 1 and movie.genre.all|length > 1 %}
+                        e
+                    {% endif %}
+                        <a href="{{ genre.get_absolute_url }}">{{ genre.name }}</a>
+                    {% if forloop.revcounter > 2 and movie.genre.all|length > 1 %}
+                        ,
+                    {% endif %}
+                {% endfor %}
             </p>
 
             <p class="tit">Atores:</p>
             <p class="txt">
                 {% for actor in movie.actor.all %}
-                    <a href="{{ actor.get_absolute_url }}"> {{ actor.name }} </a>
+                    {% if forloop.revcounter == 1 and movie.actor.all|length > 1 %}
+                        e
+                    {% endif %}
+                        <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
+                    {% if forloop.revcounter > 2 and movie.actor.all|length > 1 %}
+                        ,
+                    {% endif %}
                 {% endfor %}
             </p>
         </article>
