@@ -16,15 +16,9 @@
 	<main id="Content" class="fix">
 		<header class="fix">
 			<h1 class="fl">Comédia</h1>
-			<form action="">
-				<select name="" id="" class="fr">
-					<option value="">Ordenar por:</option>
-					<option value="">a - z</option>
-					<option value="">z - a</option>
-				</select>
-			</form>
+			{% include "include/order.html" %}
 		</header>
-		
+
 		<section id="listagem" class='fix'>
 			<ul>
 				<li class="fl"><a href="interna.html"><img src="static/img/cartaz5.jpg" alt=""></a></li>
@@ -38,6 +32,6 @@
 		</section>
 
 	</main>
-	
+
 </body>
 </html>
