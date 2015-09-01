@@ -16,7 +16,7 @@
 
     <section id="listagem" class='fix'>
         <ul>
-            {% for movie in movies %}
+            {% for movie in object_list %}
 
                 <li class="fl">
                     <a href="{{ movie.get_absolute_url }}"><img src="/media/{{ movie.picture }}" alt="{{ movie.title }}"></a>
