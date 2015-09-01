@@ -1,0 +1,170 @@
+/*
+BASE
+*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  height: 1%;
+}
+
+.clear {
+  display: block;
+  clear: both;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0px;
+}
+
+.rpl {
+  overflow: hidden;
+  text-indent: -9999em;
+  display: block;
+  font-size: 0em;
+  color: transparent;
+}
+.rpl a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.fix {
+  overflow: hidden;
+  zoom: 1;
+  display: block;
+}
+
+.cl {
+  clear: both;
+}
+
+.fl {
+  display: inline;
+  float: left;
+}
+
+.fr {
+  display: inline;
+  float: right;
+}
+
+.hide, .off {
+  display: none;
+}
+
+/*
+==========================================
+*/
+
+body{
+	font: 62.5% Arial, verdana, tahoma, sans-serif;
+}
+#header {
+	background-color: #333;
+	height: 50px; 
+}
+
+#header .content {
+	max-width: 940px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#header .content .home {
+	background: url(../img/ico-home.png) no-repeat 0 0;
+	background-size: 100% 100%;
+	display: block;
+	width: 45px;
+	height: 45px;
+	position: relative;
+	top: 2px;
+}
+
+#Content {
+	max-width: 940px;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+#Content header {
+	border-bottom: 3px solid #dedede;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+#Content header h1 {
+	font-size: 3.5em;
+	color: #666;
+	letter-spacing: -0.03em;
+}
+
+#Content header h2 {
+	font-size: 3em;
+	color: #999;
+	letter-spacing: -0.03em;
+}
+
+#Content header select {
+	font-size: 1.4em;
+	color: #999;
+	height: 30px;
+	width: 200px;
+	margin-top: 8px;
+}
+
+#listagem li {
+	background-color: #c2c2c2;
+	width: 168px;
+	height: 216px;
+	margin: 0 25px 20px 0;
+}
+#listagem li.last {
+	margin-right: 0px;
+}
+#Infos {
+	margin-bottom: 40px;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 39px;
+}
+#Infos article {
+	width: 400px;
+	margin-left: 20px;
+}
+
+#Infos article .tit {
+	color: #999;
+	font-size: 1.2em;
+	line-height: 16px;
+}
+
+#Infos article .txt {
+	color: #777;
+	font-size: 1.2em;
+	line-height: 16px;
+	margin-bottom: 10px;
+}
+
+#Infos article a {
+	color: #f0352e;
+}
+#Infos article a:hover {
+	text-decoration: underline;
+}
+
+#Infos article h2 {
+	color: #333;
+    font-size: 32px;
+    letter-spacing: -2px;
+    line-height: 36px;
+    margin-bottom: 10px;
+}
+	
