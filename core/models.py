@@ -33,7 +33,7 @@ class Genre(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('core:genre_list', (), {'slug': self.slug})
+        return ('core:genre_item', (), {'slug': self.slug})
 
     class Meta:
         verbose_name = _(u'Gênero')
@@ -51,7 +51,7 @@ class Actor(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('core:actor_list', (), {'slug': self.slug})
+        return ('core:actor_item', (), {'slug': self.slug})
 
     class Meta:
         ordering = ['name']

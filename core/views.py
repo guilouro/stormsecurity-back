@@ -9,13 +9,13 @@ class HomeList(ListView):
     template_name = 'core/index.html'
 
 
-def genre_list(request, slug):
+def genre_item(request, slug):
     genre = get_object_or_404(Genre, slug=slug)
     related = Movie.objects.filter(genre=genre)[:10]
     return render(request, 'core/genre.html', {'genre': genre, 'related': related})
 
 
-def actor_list(request, slug):
+def actor_item(request, slug):
     actor = get_object_or_404(Actor, slug=slug)
     related = Movie.objects.filter(actor=actor)[:10]
     return render(request, 'core/actor.html', {'actor': actor, 'related': related})
