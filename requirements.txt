@@ -4,5 +4,4 @@ django==1.7
 django-htmlmin
 django-grappelli
 pillow
-
 django-countries
