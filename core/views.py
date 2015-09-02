@@ -8,6 +8,12 @@ class HomeList(ListView):
     model = Movie
     template_name = 'core/index.html'
 
+    def get_queryset(self):
+        response = Movie.objects.all()
+        if 'order_by' in self.request.GET:
+            response = response.order_by(self.request.GET['order_by'])
+        return response
+
 
 def genre_item(request, slug):
     genre = get_object_or_404(Genre, slug=slug)
